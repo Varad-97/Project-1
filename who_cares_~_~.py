@@ -40,7 +40,6 @@ def data_extraction():
     for lecture, teacher in lectures:
         print(lecture + ":", teacher)
 
-    # Read existing data from Excel if the file exists
     try:
         existing_df = pd.read_excel('timetable_output.xlsx')
     except FileNotFoundError:
@@ -52,7 +51,7 @@ def data_extraction():
     new_data_df = pd.DataFrame(data)
     updated_df = pd.concat([existing_df, new_data_df], ignore_index=True)
 
-    # Save the updated DataFrame to Excel
+ 
     updated_df.to_excel('timetable_output.xlsx', index=False)
 
     print('∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞')
